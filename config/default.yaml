@@ -4,7 +4,7 @@ server:
 db:
   type: 'mariadb'
   port: 3309
-  database: 'board'
+  database: 'boards'
 
 jwt:
   expriesIn: 7200
