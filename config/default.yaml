@@ -1,0 +1,10 @@
+server:
+  port: 3100
+
+db:
+  type: 'mariadb'
+  port: 3309
+  database: 'board'
+
+jwt:
+  expriesIn: 7200
