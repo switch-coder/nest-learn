@@ -15,7 +15,7 @@ const jwtConfig = config.get('jwt')
     JwtModule.register({
       secret: process.env.JWT_SECRET || jwtConfig.secret,
       signOptions:{
-        expiresIn: jwtConfig.expiresIn //두시간
+        expiresIn: jwtConfig.expriesIn //두시간
       }
     }),
     TypeOrmModule.forFeature(([UserRepository]))
