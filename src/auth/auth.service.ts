@@ -1,9 +1,10 @@
-import { Injectable, Post, UnauthorizedException } from '@nestjs/common';
+import { HttpException, Injectable, Post, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { UserRepository } from './user.repository';
 import * as bcrypt from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
+import { HttpExceptionFilter } from 'src/httpExecption.filter';
 @Injectable()
 export class AuthService {
     constructor(
@@ -28,7 +29,7 @@ export class AuthService {
             
          return {accessToken };
         }
-        else throw new UnauthorizedException('login failed');
+        else throw new HttpException('login failed',400);
 
     }
 }

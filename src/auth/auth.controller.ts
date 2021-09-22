@@ -11,7 +11,7 @@ export class AuthController {
 
     constructor (private authService : AuthService){}
 
-    @ApiOperation({summary:"회원가입ㅈ"})
+    @ApiOperation({summary:"회원가입"})
     @Post('/signup')
     signUp(@Body(ValidationPipe) authcredentialsDto: AuthCredentialsDto) : Promise<void>{
         return this.authService.signUp(authcredentialsDto);
@@ -29,3 +29,4 @@ export class AuthController {
         console.log('req :>> ', user);
     }
 }
+  
